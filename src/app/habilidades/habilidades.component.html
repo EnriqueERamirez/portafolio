@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="my-4">Habilidades</h2>
+  <div class="row" *ngFor="let category of skillCategories">
+    <div class="col-md-12">
+      <h4>{{ category.name }}</h4>
+      <ul class="list-unstyled">
+        <li *ngFor="let skill of category.skills">
+          <div class="d-flex justify-content-between">
+            <span>{{ skill.name }}</span>
+            <span>{{ skill.percentage }}%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" [style.width]="skill.percentage + '%'" [attr.aria-valuenow]="skill.percentage" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
